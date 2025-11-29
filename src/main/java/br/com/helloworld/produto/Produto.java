@@ -3,6 +3,11 @@
  */
 
 package br.com.helloworld.produto;
+import dao.UsuarioDAO;
+import java.sql.Connection;
+import jdbc.ConnectionFactory;
+import model.UserModel;
+import service.ProdutoService;
 
 /**
  *
@@ -11,6 +16,17 @@ package br.com.helloworld.produto;
 public class Produto {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+    //Connection c = new ConnectionFactory().getConnection();
+    //if (c != null) System.out.println("Conexão OK");
+    //else System.out.println("Conexão NULA");
+    
+    UsuarioDAO dao = new UsuarioDAO();
+        UserModel u = new UserModel("amanda_rodrigues.de.siqueira@hotmail.com", "12345", 1);
+        dao.insert(u);
+        System.out.println("Usuário criado!");
 }
+    }
+
+
+    
+
